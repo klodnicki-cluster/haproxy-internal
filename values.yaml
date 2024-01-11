@@ -1,0 +1,9 @@
+kubernetes-ingress:
+  controller:
+    kind: DaemonSet
+    service:
+      ports:
+        http: 8080
+        https: 8443
+        stat: 1025
+        prometheus: 6061

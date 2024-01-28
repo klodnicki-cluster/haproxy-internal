@@ -11,3 +11,8 @@ kubernetes-ingress:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
+
+    ingressClassResource:
+      name: haproxy-internal
+      default: true
+    ingressClass: haproxy-internal

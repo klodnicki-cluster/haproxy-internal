@@ -8,6 +8,6 @@ kubernetes-ingress:
         stat: 30003
         prometheus: 30004
     tolerations:
-      - key: node-role.kubernetes-io/control-plane
+      - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule

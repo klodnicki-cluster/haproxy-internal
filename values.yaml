@@ -18,3 +18,7 @@ kubernetes-ingress:
       name: haproxy-internal
       default: true
     ingressClass: haproxy-internal
+
+    keda:
+      enabled: true
+      minReplicas: 1

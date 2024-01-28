@@ -1,12 +1,14 @@
 kubernetes-ingress:
   controller:
-    kind: DaemonSet
     service:
       nodePorts:
         http: 30001
         https: 30002
         stat: 30003
         prometheus: 30004
+
+    nodeSelector:
+      node-role.kubernetes.io/control-plane: ''
     tolerations:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists

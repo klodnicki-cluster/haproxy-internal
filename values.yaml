@@ -3,7 +3,7 @@ kubernetes-ingress:
     kind: DaemonSet
     service:
       nodePorts:
-        http: 38080
-        https: 38443
-        stat: 31025
-        prometheus: 36061
+        http: 30001
+        https: 30002
+        stat: 30003
+        prometheus: 30004

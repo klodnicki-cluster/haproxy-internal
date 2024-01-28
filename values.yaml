@@ -2,7 +2,7 @@ kubernetes-ingress:
   controller:
     kind: DaemonSet
     service:
-      ports:
+      nodePorts:
         http: 8080
         https: 8443
         stat: 1025

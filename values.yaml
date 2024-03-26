@@ -1,14 +1,16 @@
 kubernetes-ingress:
   controller:
-    service:
-      nodePorts:
+    kind: DaemonSet
+    daemonset:
+      useHostPort: true
+      hostPorts:
         http: 80
         https: 443
-        stat: 30003
-        prometheus: 30004
+        stat: 1024
 
-    nodeSelector:
-      node-role.kubernetes.io/control-plane: ''
+    service:
+      enabled: false
+
     tolerations:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
@@ -18,8 +20,3 @@ kubernetes-ingress:
       name: haproxy-internal
       default: true
     ingressClass: haproxy-internal
-
-    autoscaling:
-      enabled: true
-      minReplicas: 1
-      targetCPUUtilizationPercentage: 50

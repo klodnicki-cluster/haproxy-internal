@@ -2,8 +2,8 @@ kubernetes-ingress:
   controller:
     service:
       nodePorts:
-        http: 80
-        https: 443
+        http: 30001
+        https: 30002
         stat: 30003
         prometheus: 30004
 
